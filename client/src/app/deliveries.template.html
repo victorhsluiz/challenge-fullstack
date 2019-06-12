@@ -1,0 +1,40 @@
+<div ng-controller="deliveriesController" ng-cloak class="wrapper">
+  <div class="sidebar">
+    <h3>Challenge Routeasy</h3>
+    <form>
+      <md-input-container>
+        <label>Digite seu nome</label>
+        <input ng-model="deliveries.name" />
+      </md-input-container>
+      <md-input-container>
+        <label>Digite o peso da carga</label>
+        <input ng-model="deliveries.weight" />
+      </md-input-container>
+      <md-input-container>
+        <label>Digite o local da entrega</label>
+        <input type="text" />
+      </md-input-container>
+      <div class="half"><span>Latitude</span><span>Longitude</span></div>
+      <md-button class="md-raised md-primary">Cadastrar Entrega</md-button>
+    </form>
+  </div>
+  <div class="content">
+    <div class="map"></div>
+    <div class="list">
+      <h4>Totais</h4>
+      <table>
+        <thead>
+          <tr>
+            <th>Nome</th>
+            <th>Rua</th>
+            <th>Cidade</th>
+            <th>País</th>
+            <th>Peso</th>
+            <th>Lat</th>
+            <th>Lng</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  background: #e6ecf0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 18px;
+  text-rendering: optimizeLegibility !important;
+  -webkit-font-smoothing: antialiased !important; }
+
+.container {
+  height: 100%; }
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.1); }
+
+.sidebar {
+  width: 40%;
+  height: 100%;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; }
+  .sidebar form {
+    width: 100%;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.7);
+    box-shadow: 0px 4px 4px 2px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    font-size: 0.9em; }
+    .sidebar form input {
+      width: 100%; }
+    .sidebar form span {
+      font-size: 0.8em; }
+
+.md-button {
+  margin: 10px 0;
+  width: 100%; }
+
+.half {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .half span {
+    width: 100%; }
+
+md-input-container {
+  margin: 10px 0;
+  width: 100%; }
+
+.content {
+  width: 60%;
+  height: 100%;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.5); }
+
+.map {
+  width: 100%;
+  height: 400px;
+  margin-bottom: 20px;
+  background: #000; }
+
+.list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-size: 0.8em; }
+  .list table {
+    margin-top: 5px; }
+    .list table thead {
+      background: #3f51b5;
+      color: #fff;
+      border: none; }
+      .list table thead tr > th {
+        padding: 5px; }
+    .list table tbody {
+      background: #fff;
+      font-size: 0.75em; }
+      .list table tbody tr > td {
+        padding: 5px; }
+
+md-dialog {
+  width: 50%; }
+
+.md-info {
+  background-color: #2196f3 !important;
+  color: #ffffff !important; }
+
+.md-danger {
+  background-color: #d32f2f !important;
+  color: #ffffff !important; }
+
+/*# sourceMappingURL=styles.css.map */
