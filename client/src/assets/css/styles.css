@@ -91,15 +91,8 @@ md-input-container {
       .list table tbody tr > td {
         padding: 5px; }
 
-md-dialog {
-  width: 50%; }
-
-.md-info {
-  background-color: #2196f3 !important;
-  color: #ffffff !important; }
-
 .md-danger {
-  background-color: #d32f2f !important;
+  background: #D32F2F !important;
   color: #ffffff !important; }
 
 /*# sourceMappingURL=styles.css.map */

@@ -4,23 +4,30 @@
     <form>
       <md-input-container>
         <label>Digite seu nome</label>
-        <input ng-model="deliveries.name" />
+        <input ng-model="name" />
       </md-input-container>
       <md-input-container>
         <label>Digite o peso da carga</label>
-        <input ng-model="deliveries.weight" />
+        <input ng-model="weight" />
       </md-input-container>
       <md-input-container>
         <label>Digite o local da entrega</label>
         <input type="text" />
       </md-input-container>
       <div class="half"><span>Latitude</span><span>Longitude</span></div>
-      <md-button class="md-raised md-primary">Cadastrar Entrega</md-button>
+      <md-button class="md-raised md-primary" ng-click="createDelivery()"
+        >Cadastrar Entrega</md-button
+      >
+      <md-button
+        class="md-raised md-danger"
+        ng-click="confirmDeleteDeliveries()"
+        >Excluir Registros</md-button
+      >
     </form>
   </div>
   <div class="content">
     <div class="map"></div>
-    <div class="list">
+    <div class="list" ng-init="readDeliveries()">
       <h4>Totais</h4>
       <table>
         <thead>
@@ -34,6 +41,17 @@
             <th>Lng</th>
           </tr>
         </thead>
+        <tbody>
+          <tr ng-repeat="delivery in deliveries">
+            <td>{{ delivery.name }}</td>
+            <td>{{ delivery.location.address }}</td>
+            <td>{{ delivery.location.city }}</td>
+            <td>{{ delivery.location.country }}</td>
+            <td>{{ delivery.weight }}</td>
+            <td>{{ delivery.location.lat }}</td>
+            <td>{{ delivery.location.lng }}</td>
+          </tr>
+        </tbody>
       </table>
     </div>
   </div>

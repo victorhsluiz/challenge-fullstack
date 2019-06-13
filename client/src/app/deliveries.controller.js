@@ -7,7 +7,7 @@ app.controller("deliveriesController", function(
   $scope.readDeliveries = function() {
     deliveriesFactory.readDeliveries().then(
       function successCallback(response) {
-        $scope.deliveries = response.data.deliveries;
+        $scope.deliveries = response.data;
       },
       function errorCallback(response) {
         $scope.showToast("Não foi possível buscar os dados");
@@ -18,9 +18,8 @@ app.controller("deliveriesController", function(
   $scope.createDelivery = function() {
     deliveriesFactory.createDelivery($scope).then(
       function successCallback(response) {
-        $scope.showToast(response.data.message);
+        $scope.showToast("Entrega salva com sucesso");
         $scope.readDeliveries();
-        $scope.cancel();
         $scope.clearDeliveryForm();
       },
       function errorCallback(response) {
@@ -45,7 +44,7 @@ app.controller("deliveriesController", function(
     );
   };
 
-  $scope.confirmDeleteDelivery = function(event) {
+  $scope.confirmDeleteDeliveries = function(event) {
     var confirm = $mdDialog
       .confirm()
       .title("Confirma a operação?")
@@ -56,16 +55,16 @@ app.controller("deliveriesController", function(
 
     $mdDialog.show(confirm).then(
       function() {
-        $scope.deleteDelivery();
+        $scope.deleteDeliveries();
       },
       function() {}
     );
   };
 
-  $scope.deleteDelivery = function() {
-    deliveriesFactory.deleteDelivery().then(
+  $scope.deleteDeliveries = function() {
+    deliveriesFactory.deleteDeliveries().then(
       function successCallback(response) {
-        $scope.showToast(response.data.message);
+        $scope.showToast("Registros excluídos com sucesso");
         $scope.readDeliveries();
       },
       function errorCallback(response) {

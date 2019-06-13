@@ -1,34 +1,32 @@
-app.factory("deliveriesFactory", function($http){
- 
+app.factory("deliveriesFactory", function($http) {
   const factory = {};
-  const url = 'http://localhost:3333/deliveries';
+  const url = "http://localhost:3333/deliveries";
 
-  factory.readDeliveries = function(){
+  factory.readDeliveries = function() {
     return $http({
-      method: 'GET',
+      method: "GET",
       url
     });
   };
-   
-  factory.createDelivery = function($scope){
+
+  factory.createDelivery = function($scope) {
     return $http({
-      method: 'POST',
+      method: "POST",
       data: {
-          'name' : $scope.name,
-          'weight' : $scope.weight,
-          'location' : $scope.location
+        name: $scope.name,
+        weight: $scope.weight,
+        location: $scope.location
       },
       url
     });
   };
 
-// delete product
-factory.deleteProduct = function(id){
-  return $http({
-      method: 'DELETE',
+  factory.deleteDeliveries = function(id) {
+    return $http({
+      method: "DELETE",
       url
-  });
-};
-   
+    });
+  };
+
   return factory;
 });
