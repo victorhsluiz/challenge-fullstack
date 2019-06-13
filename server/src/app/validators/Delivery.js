@@ -5,16 +5,16 @@ module.exports = {
     name: Joi.string().required(),
     weight: Joi.number().required(),
     location: {
-      address: Joi.string().required(),
-      number: Joi.string().required(),
-      complement: Joi.string().required(),
-      district: Joi.string().required(),
-      city: Joi.string().required(),
-      state: Joi.string().required(),
-      country: Joi.string().required(),
+      address: Joi.string(),
+      number: Joi.string(),
+      complement: Joi.string(),
+      district: Joi.string(),
+      city: Joi.string(),
+      state: Joi.string(),
+      country: Joi.string(),
       geolocation: {
-        lat: Joi.string().required(),
-        lng: Joi.string().required()
+        lat: Joi.string(),
+        lng: Joi.string()
       }
     }
   }
