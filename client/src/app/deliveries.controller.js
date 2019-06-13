@@ -7,7 +7,12 @@ app.controller("deliveriesController", function(
   $scope.readDeliveries = function() {
     deliveriesFactory.readDeliveries().then(
       function successCallback(response) {
-        $scope.deliveries = response.data;
+        $scope.deliveries = response.data.deliveries;
+        $scope.totals = response.data.totals[0]
+          ? `Total de Entregas: ${
+              response.data.totals[0].count
+            } - Peso Total: ${response.data.totals[0].total_weight}`
+          : "";
       },
       function errorCallback(response) {
         $scope.showToast("Não foi possível buscar os dados");
@@ -31,7 +36,6 @@ app.controller("deliveriesController", function(
   $scope.clearDeliveryForm = function() {
     $scope.name = "";
     $scope.weight = 0;
-    $scope.location = "";
   };
 
   $scope.showToast = function(message) {
