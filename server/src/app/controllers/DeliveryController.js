@@ -3,8 +3,16 @@ const Delivery = require('../models/Delivery')
 class DeliveryController {
   async index (req, res) {
     const deliveries = await Delivery.find()
-
-    return res.json(deliveries)
+    const totals = await Delivery.aggregate([
+      {
+        $group: {
+          _id: 1,
+          total_weight: { $sum: '$weight' },
+          count: { $sum: 1 }
+        }
+      }
+    ])
+    return res.json({ deliveries, totals })
   }
 
   async store (req, res) {
